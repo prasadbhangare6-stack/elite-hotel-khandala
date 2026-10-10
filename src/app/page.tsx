@@ -3,20 +3,19 @@
 import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import PropertyIntro from '@/components/PropertyIntro';
+import BookingWidget, { BookingDetails } from '@/components/BookingWidget';
 import RoomsSection from '@/components/RoomsSection';
 import AmenitiesSection from '@/components/AmenitiesSection';
 import DiningExperiences from '@/components/DiningExperiences';
 import CategorizedGallery from '@/components/CategorizedGallery';
 import ReviewsSection from '@/components/ReviewsSection';
 import LocationAttractions from '@/components/LocationAttractions';
-import ContactWhatsApp from '@/components/ContactWhatsApp';
 import FaqSection from '@/components/FaqSection';
+import ContactWhatsApp from '@/components/ContactWhatsApp';
 import Footer from '@/components/Footer';
 import QuickEnquiryModal from '@/components/QuickEnquiryModal';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
-import ClientPitchBanner from '@/components/ClientPitchBanner';
-import { BookingDetails } from '@/components/BookingWidget';
+import MobileStickyBar from '@/components/MobileStickyBar';
 
 export default function Home() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -51,41 +50,38 @@ export default function Home() {
 
   return (
     <main className="min-h-screen flex flex-col relative bg-[#FAF8F5]">
-      {/* Navigation Header */}
+      {/* 0. Navigation Header */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
-      {/* Hero with Cinematic Visual & Embedded Search Widget */}
-      <Hero
-        onOpenBooking={handleOpenBooking}
-        onSearchBooking={handleSearchBooking}
-      />
+      {/* 1. Premium Hero with visual, value proposition, trust indicators, and booking CTA */}
+      <Hero onOpenBooking={handleOpenBooking} />
 
-      {/* Property Introduction & Setting */}
-      <PropertyIntro onOpenBooking={handleOpenBooking} />
+      {/* 2. Booking / Availability Enquiry Card */}
+      <BookingWidget onSearch={handleSearchBooking} />
 
-      {/* Verified Rooms & Balcony Suites */}
+      {/* 3. Featured Rooms & Suites (Concise, Visual, Scannable) */}
       <RoomsSection onSelectRoomBooking={handleSelectRoomBooking} />
 
-      {/* Verified Facilities & Amenities */}
+      {/* 4. Why Stay With Us / Key Verified Amenities */}
       <AmenitiesSection />
 
-      {/* Multi-Cuisine Dining & Khandala Experiences */}
+      {/* 5. Dining & Khandala Experience */}
       <DiningExperiences onOpenBooking={handleOpenBooking} />
 
-      {/* Categorized Filterable Gallery with Lightbox */}
+      {/* 6. Photo Gallery (Categorized with Lightbox) */}
       <CategorizedGallery />
 
-      {/* Verified Guest Reviews & Direct Booking ROI */}
-      <ReviewsSection />
+      {/* 7. Guest Reviews + 'Book Directly. Stay Better.' */}
+      <ReviewsSection onOpenBooking={handleOpenBooking} />
 
-      {/* Location, Directions & Verified Nearby Attractions */}
+      {/* 8. Location, Map & Nearby Attractions */}
       <LocationAttractions />
 
-      {/* Direct Contact & Enquiry Form with Instant WhatsApp */}
-      <ContactWhatsApp />
-
-      {/* Frequently Asked Questions Accordion */}
+      {/* 9. Frequently Asked Questions */}
       <FaqSection />
+
+      {/* 10. Final Booking CTA & Contact Desk */}
+      <ContactWhatsApp />
 
       {/* Footer & Policies */}
       <Footer />
@@ -97,11 +93,11 @@ export default function Home() {
         initialDetails={activeBookingDetails}
       />
 
-      {/* Floating 24/7 WhatsApp CTA */}
+      {/* Desktop Floating WhatsApp Button */}
       <FloatingWhatsApp />
 
-      {/* Client Pitch Presentation Tool for Web Developer */}
-      <ClientPitchBanner />
+      {/* Mobile Sticky Bottom Action Bar (Call / WhatsApp / Check Dates) */}
+      <MobileStickyBar onOpenBooking={handleOpenBooking} />
     </main>
   );
 }

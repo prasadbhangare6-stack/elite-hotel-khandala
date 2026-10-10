@@ -10,22 +10,25 @@ export default function FloatingWhatsApp() {
   )}`;
 
   return (
-    <aside aria-label="Direct contact assistance" className="fixed bottom-6 right-6 z-40 flex items-center group">
+    <aside
+      aria-label="Direct contact assistance"
+      className="fixed bottom-20 md:bottom-6 right-5 md:right-6 z-40 hidden sm:flex items-center group"
+    >
       {/* Tooltip Label */}
-      <span className="hidden sm:inline-block mr-3 bg-[#111714] text-white text-xs font-semibold px-3.5 py-1.5 rounded-full border border-emerald-500/40 shadow-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
-        WhatsApp Reception (+91 79720 01916)
+      <span className="hidden lg:inline-block mr-2.5 bg-[#0E1411] text-stone-200 text-xs font-medium px-3 py-1.5 rounded-full border border-stone-800 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+        Front Desk WhatsApp
       </span>
 
-      {/* Pulsing Outer Ring */}
+      {/* Button with Subtle Pulse */}
       <a
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="relative w-14 h-14 rounded-full bg-emerald-500 hover:bg-emerald-400 text-slate-950 flex items-center justify-center shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 border-2 border-white/20"
+        className="relative w-12 h-12 rounded-full bg-emerald-600 hover:bg-emerald-500 text-slate-950 flex items-center justify-center shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 border border-emerald-400/30"
         aria-label="Direct WhatsApp Enquiry"
       >
-        <span className="absolute -inset-1 rounded-full bg-emerald-400/30 animate-ping opacity-75" />
-        <MessageCircle className="w-7 h-7 text-slate-950 fill-current" />
+        <span className="absolute -inset-1 rounded-full bg-emerald-500/20 animate-ping opacity-60" />
+        <MessageCircle className="w-5 h-5 text-slate-950 fill-current" />
       </a>
     </aside>
   );

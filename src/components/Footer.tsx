@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { HOTEL_INFO } from '@/data/hotelData';
-import { Phone, Mail, MapPin, MessageCircle, Heart, ShieldCheck, ArrowUp } from 'lucide-react';
+import { Phone, Mail, MapPin, ShieldCheck, ArrowUp } from 'lucide-react';
 
 export default function Footer() {
   const scrollToTop = () => {
@@ -10,23 +10,23 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#0b100d] text-stone-400 text-xs border-t border-[#1e2a24]">
+    <footer className="bg-[#090D0B] text-stone-400 text-xs border-t border-[#1C2721] pb-14 md:pb-0">
       {/* Policy Callout Strip */}
-      <div className="bg-[#080c0a] border-b border-[#18231e] py-6 px-4">
+      <div className="bg-[#070A09] border-b border-[#16201B] py-5 px-4">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs text-stone-400">
           <div className="flex items-center space-x-2">
             <ShieldCheck className="w-4 h-4 text-[#C5A880]" />
-            <span className="font-semibold text-stone-300">Check-in: {HOTEL_INFO.checkIn}</span>
+            <span className="font-medium text-stone-300">Check-in: {HOTEL_INFO.checkIn}</span>
             <span className="text-stone-600">•</span>
-            <span className="font-semibold text-stone-300">Check-out: {HOTEL_INFO.checkOut}</span>
+            <span className="font-medium text-stone-300">Check-out: {HOTEL_INFO.checkOut}</span>
           </div>
 
           <div className="text-[11px] text-stone-400">
-            Mandatory Govt Photo ID required at check-in (Aadhaar / Passport / DL)
+            Government photo identification required at arrival for all adult guests
           </div>
 
-          <div className="text-[11px] text-amber-200/80 bg-amber-950/30 border border-amber-900/40 px-2.5 py-1 rounded">
-            Client Presentation Demo • 0% Middleman Commissions
+          <div className="text-[11px] text-stone-400">
+            Direct Bookings: Best Available Rate & Front Desk Assistance
           </div>
         </div>
       </div>
@@ -37,16 +37,16 @@ export default function Footer() {
           {/* Brand & Wordmark */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex flex-col">
-              <span className="font-display text-2xl font-bold tracking-wider text-white">
+              <span className="font-display text-2xl font-semibold tracking-wider text-white">
                 ELITE HOTEL
               </span>
-              <span className="text-[10px] uppercase tracking-[0.25em] text-[#C5A880] font-semibold -mt-1">
-                Khandala • Sahyadri Hills
+              <span className="text-[9px] uppercase tracking-[0.25em] text-[#C5A880] font-medium -mt-1">
+                Khandala • Sahyadris
               </span>
             </div>
 
             <p className="text-stone-400 text-xs leading-relaxed max-w-sm">
-              A tranquil boutique hill station retreat in Khandala, Maharashtra. Offering comfortable AC rooms, scenic mountain mist balconies, an on-site multi-cuisine restaurant, and swift connectivity from Mumbai and Pune.
+              A serene boutique hill retreat in Khandala, Maharashtra. Offering comfortable AC rooms, scenic balcony suites, on-site multi-cuisine dining, and seamless 90-minute connectivity from Mumbai and Pune.
             </p>
 
             <div className="pt-2 text-stone-300 space-y-1.5">
@@ -69,51 +69,46 @@ export default function Footer() {
 
           {/* Quick Navigation Links */}
           <div className="space-y-3">
-            <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider">
-              Explore Property
+            <h4 className="font-display text-xs font-bold text-white uppercase tracking-wider">
+              Accommodations
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
                 <a href="#rooms" className="hover:text-[#C5A880] transition-colors">
-                  AC Deluxe Rooms
+                  Deluxe King Room
                 </a>
               </li>
               <li>
                 <a href="#rooms" className="hover:text-[#C5A880] transition-colors">
-                  Super Deluxe with Balcony
+                  Super Deluxe Balcony Room
                 </a>
               </li>
               <li>
                 <a href="#rooms" className="hover:text-[#C5A880] transition-colors">
-                  AC Suite with Bathtub
+                  Executive Suite with Bathtub
                 </a>
               </li>
               <li>
                 <a href="#amenities" className="hover:text-[#C5A880] transition-colors">
-                  Verified Facilities
+                  Property Amenities
                 </a>
               </li>
               <li>
                 <a href="#dining" className="hover:text-[#C5A880] transition-colors">
-                  In-House Dining & Bar
-                </a>
-              </li>
-              <li>
-                <a href="#gallery" className="hover:text-[#C5A880] transition-colors">
-                  Photo Gallery
+                  Dining & Bar
                 </a>
               </li>
             </ul>
           </div>
 
-          {/* Nearby & Sights */}
+          {/* Nearby Sights */}
           <div className="space-y-3">
-            <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider">
-              Local Khandala
+            <h4 className="font-display text-xs font-bold text-white uppercase tracking-wider">
+              Local Sights
             </h4>
             <ul className="space-y-2 text-xs">
               <li>
-                <span className="text-stone-300">Kune Falls</span> (1.8 km)
+                <span className="text-stone-300">Kune Waterfalls</span> (1.8 km)
               </li>
               <li>
                 <span className="text-stone-300">Khandala Station</span> (800 m)
@@ -127,6 +122,24 @@ export default function Footer() {
               <li>
                 <span className="text-stone-300">Bhushi Dam</span> (7.8 km)
               </li>
+            </ul>
+          </div>
+
+          {/* Policies & Directions */}
+          <div className="space-y-3">
+            <h4 className="font-display text-xs font-bold text-white uppercase tracking-wider">
+              Guest Policies
+            </h4>
+            <ul className="space-y-2 text-xs">
+              <li>
+                <span className="text-stone-400">Check-in from 12:00 PM</span>
+              </li>
+              <li>
+                <span className="text-stone-400">Check-out by 10:00 AM</span>
+              </li>
+              <li>
+                <span className="text-stone-400">Government ID Required</span>
+              </li>
               <li>
                 <a
                   href={HOTEL_INFO.googleMapsUrl}
@@ -134,64 +147,27 @@ export default function Footer() {
                   rel="noopener noreferrer"
                   className="text-[#C5A880] hover:underline"
                 >
-                  View Route on Google Maps →
+                  Driving Route on Google Maps →
                 </a>
               </li>
             </ul>
           </div>
-
-          {/* Legal Policies & Demo Note */}
-          <div className="space-y-3">
-            <h4 className="font-display text-sm font-bold text-white uppercase tracking-wider">
-              Policies & Terms
-            </h4>
-            <ul className="space-y-2 text-xs">
-              <li>
-                <span className="hover:text-stone-300 cursor-pointer">
-                  Standard Cancellation Policy*
-                </span>
-              </li>
-              <li>
-                <span className="hover:text-stone-300 cursor-pointer">
-                  Government ID Requirements
-                </span>
-              </li>
-              <li>
-                <span className="hover:text-stone-300 cursor-pointer">
-                  Outside Food & Dining Terms
-                </span>
-              </li>
-              <li>
-                <span className="hover:text-stone-300 cursor-pointer">
-                  Privacy Policy & Data Security
-                </span>
-              </li>
-            </ul>
-            <div className="mt-3 p-2.5 rounded bg-[#141d18] border border-stone-800 text-[10px] text-stone-400">
-              *Notice: Legal policies and prices marked for hotel client approval before production launch.
-            </div>
-          </div>
         </div>
 
         {/* Bottom Copyright & Back to Top */}
-        <div className="mt-14 pt-8 border-t border-[#1a2520] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500">
+        <div className="mt-14 pt-8 border-t border-[#18231D] flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-stone-500">
           <div>
             © {new Date().getFullYear()} Elite Hotel Khandala. All rights reserved.
           </div>
 
-          <div className="flex items-center space-x-4">
-            <span className="text-stone-400">
-              Demo prepared for client demonstration & acquisition
-            </span>
-            <button
-              onClick={scrollToTop}
-              className="p-2 rounded bg-stone-900 hover:bg-[#C5A880] text-stone-400 hover:text-stone-950 transition-colors flex items-center space-x-1"
-              aria-label="Back to top"
-            >
-              <ArrowUp className="w-3.5 h-3.5" />
-              <span>Top</span>
-            </button>
-          </div>
+          <button
+            onClick={scrollToTop}
+            className="p-2 rounded bg-[#131C17] hover:bg-[#C5A880] text-stone-400 hover:text-[#0E1411] transition-colors flex items-center space-x-1"
+            aria-label="Back to top"
+          >
+            <ArrowUp className="w-3.5 h-3.5" />
+            <span>Top</span>
+          </button>
         </div>
       </div>
     </footer>
