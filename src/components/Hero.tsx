@@ -34,7 +34,7 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         <div
           className="w-full h-full bg-cover bg-center animate-hero-drift"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2200&q=85')`,
+            backgroundImage: `url('/images/hotel/exterior.jpg')`,
           }}
         />
         {/* Mountain Luxury Gradient Overlays */}
@@ -68,8 +68,8 @@ export default function Hero({ onOpenBooking }: HeroProps) {
         <div className="animate-fade-up opacity-0 delay-400 flex flex-wrap items-center justify-center gap-3 sm:gap-6 mb-9 text-xs text-stone-300">
           <div className="flex items-center space-x-1.5 bg-[#0E1411]/70 backdrop-blur px-3 py-1.5 rounded-full border border-stone-800">
             <Star className="w-3.5 h-3.5 fill-[#C5A880] text-[#C5A880]" />
-            <span className="font-medium text-white">4.2 / 5</span>
-            <span className="text-stone-400">(380+ Verified Reviews)</span>
+            <span className="font-medium text-white">{HOTEL_INFO.rating} / 5</span>
+            <span className="text-stone-400">({HOTEL_INFO.reviewCount.toLocaleString()}+ Verified Reviews)</span>
           </div>
 
           <div className="flex items-center space-x-1.5 bg-[#0E1411]/70 backdrop-blur px-3 py-1.5 rounded-full border border-stone-800">

@@ -28,20 +28,55 @@ export default function ContactWhatsApp() {
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [leadId, setLeadId] = useState<string | null>(null);
+  const [apiWhatsappUrl, setApiWhatsappUrl] = useState<string | null>(null);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.fullName.trim() || !formData.phone.trim()) {
       setError('Please provide your name and phone number.');
       return;
     }
     setError(null);
-    setSubmitted(true);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: formData.fullName,
+          phone: formData.phone,
+          email: formData.email,
+          roomType: formData.roomType,
+          checkIn: formData.dates,
+          checkOut: '',
+          adults: formData.guests,
+          message: formData.message,
+          source: 'contact-section-form',
+        }),
+      });
+
+      const data = await response.json();
+      if (data.success) {
+        setLeadId(data.leadId);
+        setApiWhatsappUrl(data.whatsappUrl);
+      }
+      setSubmitted(true);
+    } catch (err) {
+      console.warn('API submission fallback to direct WhatsApp', err);
+      setSubmitted(true);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleReset = () => {
     setSubmitted(false);
+    setLeadId(null);
+    setApiWhatsappUrl(null);
     setFormData({
       fullName: '',
       phone: '',
@@ -53,9 +88,11 @@ export default function ContactWhatsApp() {
     });
   };
 
-  const directWhatsAppUrl = `https://wa.me/${HOTEL_INFO.whatsapp}?text=${encodeURIComponent(
-    `Hello Elite Hotel Khandala, my name is ${formData.fullName || 'Guest'}. I would like to inquire about reservation availability for ${formData.roomType}.`
-  )}`;
+  const directWhatsAppUrl =
+    apiWhatsappUrl ||
+    `https://wa.me/${HOTEL_INFO.whatsapp}?text=${encodeURIComponent(
+      `Hello Elite Hotel Khandala, my name is ${formData.fullName || 'Guest'}. I would like to inquire about reservation availability for ${formData.roomType}.`
+    )}`;
 
   return (
     <section id="contact" className="py-24 sm:py-32 bg-[#0E1411] text-white relative">
@@ -174,11 +211,16 @@ export default function ContactWhatsApp() {
                     </div>
 
                     <div className="space-y-1.5">
+                      {leadId && (
+                        <span className="inline-block px-2.5 py-0.5 mb-1 bg-emerald-950/80 border border-emerald-700/60 rounded text-[11px] font-mono text-emerald-300">
+                          Booking Lead Ref: #{leadId}
+                        </span>
+                      )}
                       <h3 className="font-display text-2xl font-bold text-white">
-                        Inquiry Received
+                        Inquiry Received & Dispatched
                       </h3>
                       <p className="text-xs text-stone-300 max-w-md mx-auto leading-relaxed">
-                        Thank you, <strong>{formData.fullName}</strong>. Our front desk team at Elite Hotel Khandala has received your details and will get back to you promptly.
+                        Thank you, <strong>{formData.fullName}</strong>. Our front desk team at Elite Hotel Khandala has logged your booking request in our system.
                       </p>
                     </div>
 
@@ -343,10 +385,20 @@ export default function ContactWhatsApp() {
                     <div className="pt-2 flex justify-end">
                       <button
                         type="submit"
-                        className="w-full sm:w-auto px-7 py-2.5 bg-[#C5A880] hover:bg-[#d5b992] text-[#0E1411] font-semibold text-xs uppercase tracking-wider rounded transition-colors flex items-center justify-center space-x-2 shadow"
+                        disabled={isSubmitting}
+                        className="w-full sm:w-auto px-7 py-2.5 bg-[#C5A880] hover:bg-[#d5b992] disabled:opacity-75 text-[#0E1411] font-semibold text-xs uppercase tracking-wider rounded transition-colors flex items-center justify-center space-x-2 shadow"
                       >
-                        <Send className="w-3.5 h-3.5 text-[#0E1411]" />
-                        <span>Send Reservation Inquiry</span>
+                        {isSubmitting ? (
+                          <div className="flex items-center space-x-2">
+                            <div className="w-3.5 h-3.5 border-2 border-[#0E1411] border-t-transparent rounded-full animate-spin" />
+                            <span>Dispatching Request...</span>
+                          </div>
+                        ) : (
+                          <>
+                            <Send className="w-3.5 h-3.5 text-[#0E1411]" />
+                            <span>Send Reservation Inquiry</span>
+                          </>
+                        )}
                       </button>
                     </div>
                   </form>

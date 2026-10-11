@@ -1,11 +1,14 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { HOTEL_INFO, ATTRACTIONS } from '@/data/hotelData';
-import { MapPin, Navigation, Clock, Sparkles, ExternalLink } from 'lucide-react';
+import { MapPin, Navigation, Clock, Sparkles, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react';
 import ScrollReveal from './ui/ScrollReveal';
 
 export default function LocationAttractions() {
+  const [showAllAttractions, setShowAllAttractions] = useState(false);
+  const displayedAttractions = showAllAttractions ? ATTRACTIONS : ATTRACTIONS.slice(0, 3);
+
   return (
     <section id="location" className="py-24 sm:py-32 bg-[#FAF8F5] text-stone-900 border-t border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -91,55 +94,83 @@ export default function LocationAttractions() {
                   href={`tel:${HOTEL_INFO.phone}`}
                   className="text-xs font-semibold text-stone-700 hover:text-[#8c5d2e] transition-colors"
                 >
-                  Call for Driving Guidance: {HOTEL_INFO.phoneDisplay}
+                  Driving Guidance: {HOTEL_INFO.phoneDisplay}
                 </a>
               </div>
             </div>
 
-            {/* Right: Map Graphic / Sights Preview */}
-            <div className="lg:col-span-6 bg-[#0E1411] relative min-h-[280px] lg:min-h-full overflow-hidden flex items-center justify-center">
-              <img
-                src="https://images.unsplash.com/photo-1524661135-423995f22d0b?auto=format&fit=crop&w=1000&q=80"
-                alt="Khandala map location"
-                className="w-full h-full object-cover opacity-60"
+            {/* Right: Real Interactive Embedded Google Map */}
+            <div className="lg:col-span-6 bg-[#121B16] relative min-h-[340px] lg:min-h-full overflow-hidden flex items-center justify-center">
+              <iframe
+                title="Elite Hotel Khandala Google Maps Pin Location"
+                src={HOTEL_INFO.googleMapsEmbedUrl}
+                width="100%"
+                height="100%"
+                className="w-full h-full min-h-[340px] lg:min-h-full border-0"
+                allowFullScreen={false}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
 
-              <div className="absolute z-10 text-center p-6 bg-[#0E1411]/90 backdrop-blur-md rounded-lg border border-[#C5A880]/30 max-w-xs shadow-xl">
-                <div className="w-9 h-9 rounded-full bg-[#C5A880] text-[#0E1411] flex items-center justify-center mx-auto mb-2 shadow">
-                  <MapPin className="w-4 h-4" />
+              {/* Floating Location Badge */}
+              <div className="absolute top-4 left-4 z-10 bg-[#0E1411]/90 backdrop-blur-md px-3 py-2 rounded-md border border-[#C5A880]/30 shadow-lg pointer-events-none">
+                <div className="flex items-center space-x-2">
+                  <div className="w-6 h-6 rounded-full bg-[#C5A880] text-[#0E1411] flex items-center justify-center font-bold text-xs shrink-0 shadow">
+                    <MapPin className="w-3.5 h-3.5" />
+                  </div>
+                  <div>
+                    <h4 className="font-display text-xs font-bold text-white leading-tight">Elite Hotel Khandala</h4>
+                    <span className="text-[10px] text-stone-300 block">Opposite Kamat Hotel, B P Road</span>
+                  </div>
                 </div>
-                <h4 className="font-display text-base font-bold text-white">Elite Hotel Khandala</h4>
-                <p className="text-xs text-stone-300 mt-1">Opposite Kamat Hotel, B P Road</p>
+              </div>
+
+              {/* Quick Directions Button on Map */}
+              <div className="absolute bottom-4 right-4 z-10">
                 <a
                   href={HOTEL_INFO.googleMapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-3 inline-flex items-center space-x-1 text-[11px] font-semibold text-[#E8DBC5] hover:underline"
+                  className="px-3.5 py-2 bg-[#0E1411]/90 hover:bg-[#0E1411] text-white border border-[#C5A880]/40 text-[11px] font-semibold rounded shadow-lg flex items-center space-x-1.5 transition-colors"
                 >
-                  <span>Get Driving Directions</span>
-                  <ExternalLink className="w-3 h-3" />
+                  <Navigation className="w-3 h-3 text-[#C5A880]" />
+                  <span>Directions</span>
+                  <ExternalLink className="w-2.5 h-2.5 ml-0.5 text-stone-400" />
                 </a>
               </div>
             </div>
           </div>
         </ScrollReveal>
 
-        {/* Nearby Attractions Cards */}
+        {/* Nearby Attractions Cards (Streamlined & Focused) */}
         <div>
           <ScrollReveal>
-            <div className="flex items-center justify-between mb-8">
-              <h3 className="font-display text-2xl font-bold text-stone-900">
-                Nearby Attractions
-              </h3>
-              <span className="text-xs text-stone-500">
-                Verified travel times from the hotel
-              </span>
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between mb-8 gap-2">
+              <div>
+                <h3 className="font-display text-2xl font-bold text-stone-900">
+                  Nearby Attractions
+                </h3>
+                <span className="text-xs text-stone-500">
+                  Verified travel times directly from Elite Hotel Khandala
+                </span>
+              </div>
+
+              <button
+                onClick={() => setShowAllAttractions(!showAllAttractions)}
+                className="self-start sm:self-auto text-xs font-semibold text-[#8c5d2e] hover:text-[#6a441e] flex items-center space-x-1 border border-stone-300 px-3 py-1.5 rounded bg-white transition-colors"
+              >
+                <span>{showAllAttractions ? 'Show Top 3 Sights' : 'View All 6 Attractions'}</span>
+                {showAllAttractions ? (
+                  <ChevronUp className="w-3.5 h-3.5 ml-0.5" />
+                ) : (
+                  <ChevronDown className="w-3.5 h-3.5 ml-0.5" />
+                )}
+              </button>
             </div>
           </ScrollReveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {ATTRACTIONS.map((attraction, idx) => (
+            {displayedAttractions.map((attraction, idx) => (
               <ScrollReveal key={idx} delayMs={idx * 70}>
                 <div className="bg-white rounded-lg overflow-hidden border border-stone-200/90 shadow-xs card-lift h-full flex flex-col justify-between">
                   <div className="relative aspect-[16/10] overflow-hidden group">

@@ -36,8 +36,8 @@ export default function DiningExperiences({ onOpenBooking }: DiningExperiencesPr
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center mb-16 bg-[#131C17] rounded-xl border border-stone-800 p-6 sm:p-8">
             <div className="lg:col-span-7 rounded-lg overflow-hidden border border-stone-800/80 aspect-[16/10] relative group">
               <img
-                src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80"
-                alt="Elite Hotel Restaurant and dining ambience"
+                src="/images/hotel/restaurant.jpg"
+                alt="Elite Hotel Restaurant and dining ambience with Sahyadri valley views"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-104"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />

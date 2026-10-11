@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://elitehotelkhandala.com'),
   title: 'Elite Hotel Khandala | Boutique Stay, Balcony Rooms & Suites in Sahyadri Hills',
   description:
     'Experience serene comfort at Elite Hotel Khandala on B P Road. Featuring spacious AC rooms, scenic Sahyadri mist balconies, luxury suite with bathtub, on-site multi-cuisine dining, and 5-minute access to Kune Falls. Book direct for best rates and zero platform fees.',
@@ -24,10 +25,10 @@ export const metadata: Metadata = {
     siteName: 'Elite Hotel Khandala',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80',
+        url: '/images/hotel/exterior.jpg',
         width: 1200,
         height: 630,
-        alt: 'Elite Hotel Khandala Boutique Grounds',
+        alt: 'Elite Hotel Khandala Boutique Grounds & Facade',
       },
     ],
     locale: 'en_IN',
@@ -38,7 +39,7 @@ export const metadata: Metadata = {
     title: 'Elite Hotel Khandala | Where Sahyadri Mist Meets Refined Comfort',
     description:
       'Spacious AC rooms, scenic balconies, multi-cuisine dining, and quick 90-minute drive from Mumbai and Pune.',
-    images: ['https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80'],
+    images: ['/images/hotel/exterior.jpg'],
   },
 };
 
@@ -51,7 +52,7 @@ export default function RootLayout({
     '@context': 'https://schema.org',
     '@type': 'Hotel',
     name: 'Elite Hotel Khandala',
-    image: 'https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://elitehotelkhandala.com/images/hotel/exterior.jpg',
     description:
       'Boutique hotel in Khandala, Maharashtra offering AC rooms, scenic balconies, on-site restaurant and bar, 800m from Khandala station.',
     address: {

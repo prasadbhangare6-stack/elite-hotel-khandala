@@ -19,8 +19,8 @@ export default function PropertyIntro({ onOpenBooking }: PropertyIntroProps) {
               {/* Primary Large Image */}
               <div className="relative rounded-lg overflow-hidden shadow-2xl border border-stone-200 aspect-[4/3]">
                 <img
-                  src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80"
-                  alt="Elite Hotel Khandala relaxing atmosphere"
+                  src="/images/hotel/balcony-mist.jpg"
+                  alt="Elite Hotel Khandala private balcony overlooking Sahyadri valley mist"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
@@ -42,7 +42,7 @@ export default function PropertyIntro({ onOpenBooking }: PropertyIntroProps) {
                   Situated right on B P Road opposite Kamat Hotel, minutes from Kune Falls and Khandala Station.
                 </p>
                 <div className="mt-3 pt-3 border-t border-stone-800 flex items-center justify-between text-[11px] text-[#C5A880]">
-                  <span>4.2 ★ Guest Rating</span>
+                  <span>4.3 ★ Guest Rating</span>
                   <span>100% Verified</span>
                 </div>
               </div>
