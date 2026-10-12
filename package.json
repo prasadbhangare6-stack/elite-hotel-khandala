@@ -1,16 +1,27 @@
 {
-  "name": "elite",
+  "name": "elite-hotel-khandala",
   "version": "1.0.0",
-  "description": "",
+  "description": "Luxury boutique hospitality website and direct WhatsApp booking engine for Elite Hotel, Khandala",
+  "author": "Prasad Bhangare <prasadbhangare6@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "nextjs",
+    "hotel-website",
+    "hospitality",
+    "khandala",
+    "lonavala",
+    "luxury-hotel",
+    "direct-booking",
+    "whatsapp-booking",
+    "tailwind-css",
+    "typescript"
+  ],
   "main": "index.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "type": "module",
   "devDependencies": {
     "@types/node": "^26.6.5",
