@@ -36,7 +36,7 @@ export default function RoomModal({ room, onClose, onSelectBooking }: RoomModalP
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-3xl bg-[#0E1411] text-white rounded-lg border border-[#C5A880]/30 shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col animate-modal-in"
+        className="relative w-full max-w-3xl bg-[#181410] text-white rounded-lg border border-[#C5A880]/30 shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col animate-modal-in"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
@@ -68,7 +68,7 @@ export default function RoomModal({ room, onClose, onSelectBooking }: RoomModalP
                 alt={`${room.name} preview`}
                 className="w-full h-full object-cover transition-opacity duration-300"
               />
-              <div className="absolute bottom-3 left-3 bg-[#0E1411]/85 backdrop-blur px-3 py-1 rounded text-xs text-[#E8DBC5]">
+              <div className="absolute bottom-3 left-3 bg-[#181410]/85 backdrop-blur px-3 py-1 rounded text-xs text-[#EFE3CC]">
                 {room.view}
               </div>
             </div>
@@ -95,7 +95,7 @@ export default function RoomModal({ room, onClose, onSelectBooking }: RoomModalP
           </div>
 
           {/* Specs Matrix */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#141E18] p-4 rounded border border-stone-800 text-xs">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 bg-[#241E18] p-4 rounded border border-stone-800 text-xs">
             <div className="flex items-center space-x-2">
               <Maximize2 className="w-4 h-4 text-[#C5A880]" />
               <div>
@@ -155,7 +155,7 @@ export default function RoomModal({ room, onClose, onSelectBooking }: RoomModalP
           </div>
 
           {/* Direct Reservation Guarantee */}
-          <div className="bg-[#14221A] border border-emerald-800/40 rounded p-3.5 text-xs flex items-start space-x-3 text-stone-300">
+          <div className="bg-[#234236] border border-emerald-800/40 rounded p-3.5 text-xs flex items-start space-x-3 text-stone-300">
             <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
             <div>
               <strong className="text-white">Direct Reservation Benefit:</strong>
@@ -188,9 +188,9 @@ export default function RoomModal({ room, onClose, onSelectBooking }: RoomModalP
                 onClose();
                 onSelectBooking(room.id);
               }}
-              className="flex-1 sm:flex-initial px-5 py-2 bg-[#C5A880] hover:bg-[#d5b992] text-[#0E1411] font-semibold text-xs rounded uppercase tracking-wider transition-all flex items-center justify-center space-x-1.5 shadow"
+              className="flex-1 sm:flex-initial px-5 py-2 bg-[#C5A880] hover:bg-[#D9C29A] text-[#181410] font-semibold text-xs rounded uppercase tracking-wider transition-all flex items-center justify-center space-x-1.5 shadow"
             >
-              <Calendar className="w-3.5 h-3.5 text-[#0E1411]" />
+              <Calendar className="w-3.5 h-3.5 text-[#181410]" />
               <span>Check Dates</span>
             </button>
           </div>

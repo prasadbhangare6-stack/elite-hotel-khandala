@@ -14,7 +14,7 @@ export default function MobileStickyBar({ onOpenBooking }: MobileStickyBarProps)
   )}`;
 
   return (
-    <aside aria-label="Quick booking actions" className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#0E1411]/95 backdrop-blur-lg border-t border-[#24332B] px-3 py-2.5 shadow-[0_-8px_24px_rgba(0,0,0,0.4)]">
+    <aside aria-label="Quick booking actions" className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-[#181410]/95 backdrop-blur-lg border-t border-[#3E362E] px-3 py-2.5 shadow-[0_-8px_24px_rgba(0,0,0,0.4)]">
       <div className="grid grid-cols-12 gap-2 items-center max-w-md mx-auto">
         {/* Quick Call Button */}
         <a
@@ -41,9 +41,9 @@ export default function MobileStickyBar({ onOpenBooking }: MobileStickyBarProps)
         {/* Check Availability Primary CTA */}
         <button
           onClick={onOpenBooking}
-          className="col-span-6 flex items-center justify-center space-x-1.5 py-2.5 px-3 rounded-md bg-[#C5A880] hover:bg-[#d5b992] text-[#0E1411] font-semibold text-xs uppercase tracking-wider shadow-md active:scale-95 transition-all"
+          className="col-span-6 flex items-center justify-center space-x-1.5 py-2.5 px-3 rounded-md bg-[#C5A880] hover:bg-[#D9C29A] text-[#181410] font-semibold text-xs uppercase tracking-wider shadow-md active:scale-95 transition-all"
         >
-          <Calendar className="w-3.5 h-3.5 text-[#0E1411]" />
+          <Calendar className="w-3.5 h-3.5 text-[#181410]" />
           <span>Check Dates</span>
         </button>
       </div>

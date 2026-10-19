@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Elite Hotel Khandala — Sunset Valley Preview</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{--plum:#2B1B12;--plum2:#3A2517;--amber:#E8A15C;--amber2:#F0B978;--sage:#8AA899;--sage-d:#5F7F6E;--sand:#F3E9D7;--cream:#FBF6EC;--forest:#234236;--ink:#2A201A}
+body{font-family:Georgia,'Times New Roman',serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+.sans{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+a{color:inherit}
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;color:#fff;overflow:hidden;background:var(--plum)}
+.hero-img{position:absolute;inset:0;background:url('elite-audit/balcony-room.jpg') center/cover;opacity:.85;animation:kenburns 18s ease-in-out infinite alternate}
+@keyframes kenburns{from{transform:scale(1)}to{transform:scale(1.12) translateY(-12px)}}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(43,27,18,.72) 0%,rgba(43,27,18,.18) 38%,rgba(35,66,54,.42) 72%,rgba(43,27,18,.88) 100%)}
+.hero-inner{position:relative;z-index:2;padding:110px 20px 70px;max-width:900px}
+.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(43,27,18,.65);backdrop-filter:blur(10px);border:1px solid rgba(232,161,92,.55);padding:8px 16px;border-radius:999px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--sand)}
+.badge b{color:var(--amber)}
+h1{font-size:clamp(2.4rem,6vw,4.6rem);font-weight:400;line-height:1.08;margin:22px 0 16px}
+h1 em{color:var(--amber2);font-style:italic}
+.sub{font-family:system-ui,sans-serif;color:#EFE3D3;max-width:620px;margin:0 auto;font-size:16px;line-height:1.7}
+.ctas{margin-top:26px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;font-family:system-ui,sans-serif}
+.btn{padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:700;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+.btn-amber{background:linear-gradient(135deg,var(--amber),#D98A3D);color:#2B1B12;box-shadow:0 12px 30px rgba(232,161,92,.35)}
+.btn-ghost{border:1px solid rgba(255,255,255,.6);color:#fff;background:rgba(255,255,255,.08);backdrop-filter:blur(8px)}
+.price{margin-top:16px;font-family:system-ui,sans-serif;font-size:13px;color:var(--sand)}
+.price strong{color:#fff;font-size:18px}
+/* BOOKING BAR */
+.bar{position:relative;z-index:3;max-width:980px;margin:-34px auto 0;background:rgba(251,246,236,.92);backdrop-filter:blur(14px);border:1px solid rgba(232,161,92,.5);border-radius:18px;padding:14px;display:grid;grid-template-columns:1fr 1fr 1fr auto;gap:10px;box-shadow:0 24px 50px rgba(43,27,18,.25);font-family:system-ui,sans-serif}
+.bar label{font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--sage-d);font-weight:700}
+.bar div{border-right:1px solid #E7D9C3;padding:2px 10px}
+.bar div:nth-child(3){border:none}
+.bar span{display:block;font-weight:700;color:var(--plum);margin-top:3px}
+.bar button{background:var(--forest);color:#fff;border:none;border-radius:12px;padding:0 22px;font-weight:800;cursor:pointer}
+/* MARQUEE */
+.marquee{overflow:hidden;background:var(--forest);color:var(--sand);padding:12px 0;margin-top:34px;white-space:nowrap;font-family:system-ui,sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase}
+.marquee-track{display:inline-block;animation:scroll 26s linear infinite}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marquee span{margin:0 18px}.marquee i{color:var(--amber);font-style:normal}
+/* SECTIONS */
+section{padding:84px 20px}
+.wrap{max-width:1100px;margin:0 auto}
+.kicker{font-family:system-ui,sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:#B07A3F;font-weight:800;text-align:center}
+h2{font-size:clamp(1.9rem,4vw,3rem);font-weight:400;text-align:center;line-height:1.15;margin:12px 0}
+h2 em{color:#C97E3D}
+.lead{font-family:system-ui,sans-serif;text-align:center;color:#6B5A4A;max-width:640px;margin:0 auto;line-height:1.7}
+/* SWATCHES */
+.swatches{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:34px;font-family:system-ui,sans-serif}
+.sw{border-radius:16px;padding:18px;color:#fff;min-height:120px;display:flex;flex-direction:column;justify-content:flex-end}
+.sw small{opacity:.85}.sw strong{font-size:15px}
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px;margin-top:36px}
+.card{background:#fff;border-radius:20px;overflow:hidden;border:1px solid #EFE2CC;box-shadow:0 16px 40px rgba(43,27,18,.08);font-family:system-ui,sans-serif}
+.card img{width:100%;height:210px;object-fit:cover}
+.card-body{padding:20px}.card h3{font-family:Georgia,serif;font-size:22px;font-weight:400}
+.card p{color:#7A675A;font-size:14px;line-height:1.6;margin:8px 0 14px}
+.tag{display:inline-block;background:#FDF0DF;color:#9A621F;border:1px solid #F3D3A7;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 9px;border-radius:999px}
+.tag.pop{background:var(--amber);color:#2B1B12;border-color:var(--amber)}
+.meta{font-size:13px;color:var(--sage-d);font-weight:700}
+/* DARK BAND */
+.dark{background:linear-gradient(160deg,var(--plum),var(--forest));color:#fff;border-radius:28px;padding:52px 28px;text-align:center}
+.dark p{font-family:system-ui,sans-serif;color:#DCCDB6;line-height:1.7;max-width:640px;margin:12px auto}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:28px;font-family:system-ui,sans-serif}
+.stat{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:18px}
+.stat strong{font-size:28px;color:var(--amber2);font-family:Georgia,serif}
+.reveal{opacity:0;transform:translateY(28px);transition:all .8s cubic-bezier(.2,.7,.2,1)}
+.reveal.visible{opacity:1;transform:none}
+footer{background:var(--plum);color:#CBB99F;text-align:center;padding:28px;font-family:system-ui,sans-serif;font-size:13px}
+.wa{position:fixed;right:16px;bottom:16px;z-index:9;background:#1FAD55;color:#fff;text-decoration:none;font-family:system-ui,sans-serif;font-weight:800;padding:13px 18px;border-radius:999px;box-shadow:0 14px 30px rgba(0,0,0,.25)}
+@media(max-width:700px){.bar{grid-template-columns:1fr 1fr}.bar button{grid-column:span 2;padding:14px}}
+</style></head>
+<body>
+<header class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-inner">
+    <div class="badge"><b>✦</b> Boutique Sanctuary in Khandala</div>
+    <h1>Where Sahyadri Mist Meets <em>Sunset Mountain Comfort.</em></h1>
+    <p class="sub">This is your new <b>Sunset Valley</b> direction — plum-brown depth, sunset amber highlights and sage green calm. Same hotel, instantly more premium and warm.</p>
+    <div class="ctas"><a class="btn btn-amber" href="#rooms">Check Availability</a><a class="btn btn-ghost" href="#palette">See New Colours ↓</a></div>
+    <div class="price">Direct booking from <strong>₹ ____ / night</strong> &nbsp;·&nbsp; Best rate on WhatsApp · Priority check-in</div>
+  </div>
+</header>
+
+<div class="bar sans"><div><label>Check-in</label><span>Add date</span></div><div><label>Check-out</label><span>Add date</span></div><div><label>Guests</label><span>2 Adults</span></div><button>Check Availability →</button></div>
+
+<div class="marquee"><div class="marquee-track" id="mq"></div></div>
+
+<section id="palette"><div class="wrap">
+  <div class="kicker">Your Chosen Direction · Option C</div>
+  <h2>Sunset Valley <em>Colour Palette</em></h2>
+  <p class="lead">Warm, photographic and Instagram-friendly — made for couples & weekend travellers from Mumbai/Pune. Amber is used only for actions, so guests always know where to tap.</p>
+  <div class="swatches reveal">
+    <div class="sw" style="background:#2B1B12"><small>Primary / Header & Footer</small><strong>Deep Plum-Brown<br>#2B1B12</strong></div>
+    <div class="sw" style="background:#E8A15C;color:#2B1B12"><small>CTA / Highlights</small><strong>Sunset Amber<br>#E8A15C</strong></div>
+    <div class="sw" style="background:#8AA899"><small>Calm Accent</small><strong>Sage<br>#8AA899</strong></div>
+    <div class="sw" style="background:#F3E9D7;color:#2B1B12"><small>Light Sections</small><strong>Sand<br>#F3E9D7</strong></div>
+    <div class="sw" style="background:#234236"><small>Dark Sections</small><strong>Forest<br>#234236</strong></div>
+  </div>
+</div></section>
+
+<section id="rooms" style="background:#F3E9D7"><div class="wrap">
+  <div class="kicker">Rooms & Balcony Suites</div>
+  <h2>Quiet Sanctuaries in the <em>Hills.</em></h2>
+  <p class="lead">Notice: cards are now warm white on sand, amber = “Most Popular”, sage = practical info. Much more contrast than the old all-beige look.</p>
+  <div class="cards">
+    <article class="card reveal"><img src="elite-audit/balcony-room.jpg" alt="Balcony room"><div class="card-body"><span class="tag pop">★ Most Popular</span><h3>Super Deluxe Balcony Room</h3><p>Wake up to cool mountain breezes and rolling Sahyadri mist from your private balcony.</p><div class="meta">290 sq.ft · 2–3 Guests · Private Balcony</div></div></article>
+    <article class="card reveal"><img src="elite-audit/exterior.jpg" alt="Hotel exterior"><div class="card-body"><span class="tag">Valley View</span><h3>Executive Suite + Bathtub</h3><p>Expansive indulgence with a private soaking tub, master bedroom and dedicated lounge.</p><div class="meta">325 sq.ft · Up to 4 Guests · Soaking Tub</div></div></article>
+    <article class="card reveal"><img src="elite-audit/restaurant.jpg" alt="Restaurant"><div class="card-body"><span class="tag">In-House Dining</span><h3>Multi-Cuisine Restaurant</h3><p>Hot Maharashtrian specialties and North Indian favourites — served with a valley view.</p><div class="meta">Veg & Non-Veg · Room Service</div></div></article>
+  </div>
+</div></section>
+
+<section><div class="wrap"><div class="dark reveal">
+  <div class="kicker" style="color:var(--amber2)">Why Book Direct</div>
+  <h2 style="color:#fff">Book Directly. <em>Stay Better.</em></h2>
+  <p>The dark plum-to-forest gradient is your new “wow” band between light sections. While scrolling, sections will reveal one-by-one like this — that’s the premium journey we’ll add to your real code.</p>
+  <div class="stats"><div class="stat"><strong data-count="4.2">0</strong><br>Guest Rating ★</div><div class="stat"><strong data-count="1050">0</strong><br>Verified Reviews +</div><div class="stat"><strong data-count="800">0</strong><br>Metres to Station</div><div class="stat"><strong data-count="5">0</strong><br>Mins to Kune Falls</div></div>
+</div></div></section>
+
+<footer>PREVIEW ONLY — Elite Hotel Khandala · Sunset Valley direction · Send your GitHub link + real photos + starting price and I’ll apply this to your actual Next.js code.<br>Front Desk: +91 79720 01916 · B P Road, Opposite Kamat Hotel, Khandala</footer>
+<a class="wa" href="https://wa.me/917972001916" target="_blank">💬 WhatsApp Front Desk</a>
+
+<script>
+const items='Kune Falls · 5 Mins ✦ Private Mist Balconies ✦ In-House Dining ✦ 800m from Station ✦ Best Direct Rate ✦ ';
+document.getElementById('mq').textContent=(items.repeat(4));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');
+  e.target.querySelectorAll('[data-count]').forEach(el=>{let t=+el.dataset.count,end=0;let step=t/50;let iv=setInterval(()=>{end+=step;if(end>=t){end=t;clearInterval(iv)}el.textContent=(t%1?end.toFixed(1):Math.round(end))+(t===1050?'+':'')},24)});
+  io.unobserve(e.target)}}),{threshold:.18});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body></html>

@@ -65,14 +65,15 @@ export default function RootLayout({
     },
     geo: {
       '@type': 'GeoCoordinates',
-      latitude: 18.7573475,
-      longitude: 73.3770696,
+      latitude: 18.7572306,
+      longitude: 73.3768465,
     },
     telephone: '+917972001916',
     priceRange: '₹₹',
     starRating: {
       '@type': 'Rating',
-      ratingValue: '4.2',
+      ratingValue: '4.8',
+      reviewCount: '2243',
     },
     checkinTime: '12:00',
     checkoutTime: '10:00',
@@ -86,7 +87,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="antialiased min-h-screen flex flex-col bg-[#FAF8F5] text-stone-900 selection:bg-[#C5A880] selection:text-stone-950">
+      <body className="antialiased min-h-screen flex flex-col bg-[#FBF6EC] text-stone-900 selection:bg-[#C5A880] selection:text-stone-950">
         {children}
       </body>
     </html>

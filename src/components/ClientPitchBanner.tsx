@@ -13,7 +13,7 @@ export default function ClientPitchBanner() {
   return (
     <aside aria-label="Client acquisition pitch deck" className="fixed bottom-6 left-6 z-40 max-w-md hidden md:block">
       {isExpanded ? (
-        <div className="bg-[#111714] text-white border border-[#C5A880] rounded-lg shadow-2xl p-5 space-y-4 animate-fadeIn">
+        <div className="bg-[#181410] text-white border border-[#C5A880] rounded-lg shadow-2xl p-5 space-y-4 animate-fadeIn">
           <div className="flex items-center justify-between border-b border-stone-800 pb-3">
             <div className="flex items-center space-x-2">
               <Presentation className="w-5 h-5 text-[#C5A880]" />

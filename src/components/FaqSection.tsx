@@ -18,13 +18,13 @@ export default function FaqSection() {
         {/* Section Header */}
         <ScrollReveal>
           <div className="text-center mb-14">
-            <div className="inline-flex items-center space-x-2 text-[11px] uppercase tracking-[0.2em] font-semibold text-[#8c5d2e] mb-3">
+            <div className="inline-flex items-center space-x-2 text-[11px] uppercase tracking-[0.2em] font-semibold text-[#96754A] mb-3">
               <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
               <span>Guest Assistance</span>
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
               Frequently Asked{' '}
-              <span className="font-editorial italic text-[#8c5d2e]">
+              <span className="font-editorial italic text-[#96754A]">
                 Questions.
               </span>
             </h2>
@@ -40,7 +40,7 @@ export default function FaqSection() {
             const isOpen = openIndex === index;
             return (
               <ScrollReveal key={index} delayMs={index * 40}>
-                <div className="bg-[#FAF8F5] rounded-lg border border-stone-200/90 overflow-hidden transition-colors">
+                <div className="bg-[#FBF6EC] rounded-lg border border-stone-200/90 overflow-hidden transition-colors">
                   <button
                     onClick={() => toggleFaq(index)}
                     className="w-full p-5 text-left flex items-center justify-between gap-4 hover:bg-stone-100/60 transition-colors"
@@ -72,7 +72,7 @@ export default function FaqSection() {
         {/* Quick Contact Prompt */}
         <div className="mt-10 text-center text-xs text-stone-500">
           <span>Need assistance with a specific request? </span>
-          <a href="#contact" className="text-[#8c5d2e] font-semibold hover:underline">
+          <a href="#contact" className="text-[#96754A] font-semibold hover:underline">
             Contact our reception desk directly
           </a>
         </div>

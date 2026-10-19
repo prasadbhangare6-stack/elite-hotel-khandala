@@ -132,11 +132,11 @@ export default function QuickEnquiryModal({
       onClick={onClose}
     >
       <div
-        className="relative w-full max-w-xl bg-[#0E1411] text-white rounded-lg border border-[#C5A880]/35 shadow-2xl overflow-hidden my-auto max-h-[95vh] flex flex-col animate-modal-in"
+        className="relative w-full max-w-xl bg-[#181410] text-white rounded-lg border border-[#C5A880]/35 shadow-2xl overflow-hidden my-auto max-h-[95vh] flex flex-col animate-modal-in"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Modal Header */}
-        <div className="flex items-center justify-between px-6 py-4 bg-[#131C17] border-b border-stone-800">
+        <div className="flex items-center justify-between px-6 py-4 bg-[#211B16] border-b border-stone-800">
           <div>
             <div className="inline-flex items-center space-x-1.5 text-[10px] uppercase tracking-widest text-[#C5A880] font-medium">
               <Sparkles className="w-3 h-3 text-[#C5A880]" />
@@ -175,7 +175,7 @@ export default function QuickEnquiryModal({
                 </p>
               </div>
 
-              <div className="p-4 rounded bg-[#141E18] border border-stone-800 max-w-sm mx-auto text-xs text-left space-y-1.5 text-stone-300">
+              <div className="p-4 rounded bg-[#241E18] border border-stone-800 max-w-sm mx-auto text-xs text-left space-y-1.5 text-stone-300">
                 <div className="flex justify-between">
                   <span className="text-stone-400">Duration:</span>
                   <span className="text-white font-medium">
@@ -217,7 +217,7 @@ export default function QuickEnquiryModal({
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4">
               {/* Selected Room Preview Strip */}
-              <div className="flex items-center space-x-3.5 bg-[#141E18] p-3 rounded-lg border border-stone-800">
+              <div className="flex items-center space-x-3.5 bg-[#241E18] p-3 rounded-lg border border-stone-800">
                 <img
                   src={currentRoom.heroImage}
                   alt={currentRoom.name}
@@ -246,7 +246,7 @@ export default function QuickEnquiryModal({
                     type="date"
                     value={checkIn}
                     onChange={(e) => setCheckIn(e.target.value)}
-                    className="w-full bg-[#18231E] border border-stone-700 rounded px-2.5 py-2 text-white focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#241E18] border border-stone-700 rounded px-2.5 py-2 text-white focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
@@ -259,7 +259,7 @@ export default function QuickEnquiryModal({
                     value={checkOut}
                     min={checkIn}
                     onChange={(e) => setCheckOut(e.target.value)}
-                    className="w-full bg-[#18231E] border border-stone-700 rounded px-2.5 py-2 text-white focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#241E18] border border-stone-700 rounded px-2.5 py-2 text-white focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
@@ -270,7 +270,7 @@ export default function QuickEnquiryModal({
                   <select
                     value={adults}
                     onChange={(e) => setAdults(Number(e.target.value))}
-                    className="w-full bg-[#18231E] border border-stone-700 rounded px-2.5 py-2 text-white focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#241E18] border border-stone-700 rounded px-2.5 py-2 text-white focus:outline-none focus:border-[#C5A880]"
                   >
                     <option value={1}>1 Adult</option>
                     <option value={2}>2 Adults</option>
@@ -292,7 +292,7 @@ export default function QuickEnquiryModal({
                     placeholder="Enter full name"
                     value={guestName}
                     onChange={(e) => setGuestName(e.target.value)}
-                    className="w-full bg-[#18231E] border border-stone-700 rounded px-2.5 py-2 text-white focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#241E18] border border-stone-700 rounded px-2.5 py-2 text-white focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
 
@@ -306,13 +306,13 @@ export default function QuickEnquiryModal({
                     placeholder="+91 98765 43210"
                     value={guestPhone}
                     onChange={(e) => setGuestPhone(e.target.value)}
-                    className="w-full bg-[#18231E] border border-stone-700 rounded px-2.5 py-2 text-white focus:outline-none focus:border-[#C5A880]"
+                    className="w-full bg-[#241E18] border border-stone-700 rounded px-2.5 py-2 text-white focus:outline-none focus:border-[#C5A880]"
                   />
                 </div>
               </div>
 
               {/* Direct Booking Benefit Strip */}
-              <div className="bg-[#14221A] border border-emerald-800/40 rounded p-3 text-xs flex items-center space-x-2 text-emerald-300">
+              <div className="bg-[#234236] border border-emerald-800/40 rounded p-3 text-xs flex items-center space-x-2 text-emerald-300">
                 <ShieldCheck className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>
                   Direct Reservation Desk: Quick Confirmation & Best Available Rates
@@ -334,16 +334,16 @@ export default function QuickEnquiryModal({
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full py-2.5 bg-[#C5A880] hover:bg-[#d5b992] disabled:opacity-70 text-[#0E1411] font-semibold text-xs uppercase tracking-wider rounded flex items-center justify-center space-x-1.5 transition-colors shadow"
+                  className="w-full py-2.5 bg-[#C5A880] hover:bg-[#D9C29A] disabled:opacity-70 text-[#181410] font-semibold text-xs uppercase tracking-wider rounded flex items-center justify-center space-x-1.5 transition-colors shadow"
                 >
                   {isSubmitting ? (
                     <div className="flex items-center space-x-2">
-                      <div className="w-3.5 h-3.5 border-2 border-[#0E1411] border-t-transparent rounded-full animate-spin" />
+                      <div className="w-3.5 h-3.5 border-2 border-[#181410] border-t-transparent rounded-full animate-spin" />
                       <span>Transmitting...</span>
                     </div>
                   ) : (
                     <>
-                      <Send className="w-4 h-4 text-[#0E1411]" />
+                      <Send className="w-4 h-4 text-[#181410]" />
                       <span>Request Availability</span>
                     </>
                   )}

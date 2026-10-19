@@ -54,12 +54,18 @@ export const HOTEL_INFO = {
   email: 'stay@elitehotelkhandala.com',
   whatsapp: '917972001916',
   whatsappMessage: 'Hello Elite Hotel Khandala, I would like to inquire about room availability for an upcoming stay.',
-  googleMapsUrl: 'https://maps.google.com/?q=Elite+Hotel+Khandala,+Opposite+Kamat+Hotel,+B+P+Road,+Khandala+410301',
+  googleMapsUrl: 'https://www.google.com/maps/place/Elite+Hotel/@18.7572306,73.3768465,17z/data=!3m1!4b1!4m9!3m8!1s0x3be8012b7fa8e6d1:0x641bad9413b6fb35',
   googleMapsEmbedUrl: 'https://maps.google.com/maps?q=Elite+Hotel+Khandala,+Opposite+Kamat+Hotel,+Khandala,+Maharashtra+410301&t=&z=15&ie=UTF8&iwloc=&output=embed',
   checkIn: '12:00 PM',
   checkOut: '10:00 AM',
-  rating: 4.3,
-  reviewCount: 1050,
+  rating: 4.8,
+  reviewCount: 2243,
+  startingPrice: 2468,
+  otaPrices: [
+    { platform: 'Cleartrip', price: 2468 },
+    { platform: 'MakeMyTrip', price: 2557 },
+  ] as { platform: string; price: number }[],
+  googleMapsPlaceUrl: 'https://www.google.com/maps/place/Elite+Hotel/@18.7572306,73.3768465,17z/data=!3m1!4b1!4m9!3m8!1s0x3be8012b7fa8e6d1:0x641bad9413b6fb35',
   starRating: '3-Star Boutique Mountain Stay',
   policyCoupleFriendly: 'Couple-friendly with valid Government ID (Aadhaar, Passport, Voter ID, Driving License)',
 };
@@ -74,13 +80,13 @@ export const ROOMS: RoomCategory[] = [
     occupancy: '2 Adults, 1 Child',
     bedType: 'King-Size Bed',
     view: 'Garden & Mountain Breeze',
-    pricePerNight: 2899,
+    pricePerNight: 2468,
     featured: false,
-    heroImage: '/images/hotel/deluxe-room.jpg',
+    heroImage: '/images/hotel/real-room-gold.jpg',
     galleryImages: [
-      '/images/hotel/deluxe-room.jpg',
-      '/images/hotel/reception.jpg',
-      '/images/hotel/exterior.jpg',
+      '/images/hotel/real-room-gold.jpg',
+      '/images/hotel/real-reception.jpg',
+      '/images/hotel/real-entrance.jpg',
     ],
     description: 'A quiet, thoughtfully appointed sanctuary for couples and road-trippers seeking restful quiet in Khandala. Features individually controlled air conditioning, plush king bedding, work desk, and swift access to Western Ghat viewpoints.',
     amenities: [
@@ -109,7 +115,7 @@ export const ROOMS: RoomCategory[] = [
     galleryImages: [
       '/images/hotel/balcony-room.jpg',
       '/images/hotel/balcony-mist.jpg',
-      '/images/hotel/exterior.jpg',
+      '/images/hotel/real-room-gold.jpg',
     ],
     description: 'Immerse yourself in Khandala’s legendary hill air. Step directly onto your private balcony for morning tea while valley clouds pass over the ridge. Offers an expanded layout with comfortable seating lounge.',
     amenities: [
@@ -139,7 +145,7 @@ export const ROOMS: RoomCategory[] = [
     galleryImages: [
       '/images/hotel/executive-suite.jpg',
       '/images/hotel/balcony-mist.jpg',
-      '/images/hotel/deluxe-room.jpg',
+      '/images/hotel/real-restaurant.jpg',
     ],
     description: 'Our most spacious accommodation, designed for families and discerning travellers who appreciate extra room. Features a dedicated relaxation lounge, an expansive master bedroom, and an en-suite with a private deep-soaking bathtub.',
     amenities: [
@@ -222,7 +228,7 @@ export const ATTRACTIONS: LocalAttraction[] = [
     driveTime: '5 mins',
     type: 'Nature',
     description: 'India’s 14th highest waterfall, cascading 200 meters in three tiers against dramatic Sahyadri cliffs.',
-    image: '/images/hotel/kune-falls.jpg',
+    image: '/images/hotel/real-kune-falls.jpg',
   },
   {
     name: 'Khandala Railway Station',
@@ -238,7 +244,7 @@ export const ATTRACTIONS: LocalAttraction[] = [
     driveTime: '12 mins',
     type: 'Viewpoint',
     description: 'Iconic cliff formation offering exhilarating trekking and 360-degree sunset panoramas.',
-    image: '/images/hotel/dukes-nose.jpg',
+    image: '/images/hotel/real-dukes-nose.jpg',
   },
   {
     name: 'Tiger’s Leap & Lion’s Point',
@@ -246,7 +252,7 @@ export const ATTRACTIONS: LocalAttraction[] = [
     driveTime: '20 mins',
     type: 'Viewpoint',
     description: 'A dramatic 650m sheer drop cliff with exhilarating valley echoes and evening mist.',
-    image: 'https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=800&q=80',
+    image: '/images/hotel/real-dukes-nose.jpg',
   },
   {
     name: 'Bhushi Dam & Waterfalls',
@@ -254,7 +260,7 @@ export const ATTRACTIONS: LocalAttraction[] = [
     driveTime: '18 mins',
     type: 'Nature',
     description: 'Famous stepped waterfall and masonry dam where refreshing mountain waters overflow.',
-    image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+    image: '/images/hotel/real-kune-falls.jpg',
   },
   {
     name: 'Karla & Bhaja Buddhist Caves',
@@ -262,7 +268,7 @@ export const ATTRACTIONS: LocalAttraction[] = [
     driveTime: '25 mins',
     type: 'Heritage',
     description: 'Ancient 2nd-century BC rock-cut Buddhist chaityas and monasteries carved deep into the basalt rock.',
-    image: 'https://images.unsplash.com/photo-1599817799583-0a77f980e1a1?auto=format&fit=crop&w=800&q=80',
+    image: '/images/hotel/real-karla-bhaja.jpg',
   },
 ];
 
@@ -344,29 +350,29 @@ export const GALLERY_ITEMS = [
   {
     id: 'g3',
     category: 'Rooms',
-    title: 'Deluxe King Bedroom',
-    image: '/images/hotel/deluxe-room.jpg',
-    caption: 'Comfortable king bed and work desk in Deluxe Room',
+    title: 'Deluxe King Bedroom — Real Room',
+    image: '/images/hotel/real-room-gold.jpg',
+    caption: 'Real Deluxe King room — gold runner, ambient headboard lighting, climate AC',
   },
   {
     id: 'g4',
     category: 'Property',
-    title: 'Elite Hotel Facade & Parking',
-    image: '/images/hotel/exterior.jpg',
-    caption: 'Boutique mountain property on B P Road opposite Kamat Hotel',
+    title: 'Elite Hotel Entrance & Lobby',
+    image: '/images/hotel/real-entrance.jpg',
+    caption: 'Real entrance on B P Road, opposite Kamat Hotel — festive welcome, glass lobby',
   },
   {
     id: 'g5',
     category: 'Dining',
     title: 'In-House Multi-Cuisine Dining',
-    image: '/images/hotel/restaurant.jpg',
+    image: '/images/hotel/real-restaurant.jpg',
     caption: 'Warm dining terrace and bar serving authentic hot meals',
   },
   {
     id: 'g6',
     category: 'Property',
     title: '24/7 Front Desk & Reception',
-    image: '/images/hotel/reception.jpg',
+    image: '/images/hotel/real-reception.jpg',
     caption: 'Welcoming front desk lobby with round-the-clock check-in assistance',
   },
   {
@@ -380,7 +386,21 @@ export const GALLERY_ITEMS = [
     id: 'g8',
     category: 'Surroundings',
     title: 'Kune Waterfalls (5 mins away)',
-    image: '/images/hotel/kune-falls.jpg',
-    caption: 'Cascading 200m waterfall just 1.8 km from Elite Hotel',
+    image: '/images/hotel/real-kune-falls.jpg',
+    caption: 'Real Kune Falls in monsoon mist — cascading 200m waterfall just 1.8 km from Elite Hotel',
+  },
+  {
+    id: 'g9',
+    category: 'Surroundings',
+    title: 'Duke’s Nose (Nagphani)',
+    image: '/images/hotel/real-dukes-nose.jpg',
+    caption: 'Real Nagphani cliff — sunset trek viewpoint 4.2 km from the hotel',
+  },
+  {
+    id: 'g10',
+    category: 'Surroundings',
+    title: 'Karla & Bhaja Caves',
+    image: '/images/hotel/real-karla-bhaja.jpg',
+    caption: 'Real 2nd-century BC rock-cut caves, 25 mins from Elite Hotel',
   },
 ];

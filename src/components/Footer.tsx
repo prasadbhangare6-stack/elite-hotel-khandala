@@ -10,9 +10,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-[#090D0B] text-stone-400 text-xs border-t border-[#1C2721] pb-14 md:pb-0">
+    <footer className="bg-[#100D0A] text-stone-400 text-xs border-t border-[#241E18] pb-14 md:pb-0">
       {/* Policy Callout Strip */}
-      <div className="bg-[#070A09] border-b border-[#16201B] py-5 px-4">
+      <div className="bg-[#0B0908] border-b border-[#1B1712] py-5 px-4">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs text-stone-400">
           <div className="flex items-center space-x-2">
             <ShieldCheck className="w-4 h-4 text-[#C5A880]" />
@@ -32,7 +32,13 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Body */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8 text-center">
+        <div className="font-editorial italic text-[#D9C29A] text-lg">Elite Hotel, Khandala</div>
+        <p className="font-display text-3xl sm:text-4xl text-white font-normal mt-2">Your Sahyadri story begins with a single night.</p>
+        <a href="#booking-enquiry" className="inline-flex mt-6 px-8 py-3.5 bg-[#C5A880] hover:bg-[#D9C29A] text-[#181410] text-xs font-bold uppercase tracking-[0.16em] rounded-sm transition-colors">Reserve Your Stay — From ₹2,468 / Night</a>
+        <div className="rule-gold mt-12" />
+      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand & Wordmark */}
           <div className="lg:col-span-2 space-y-4">
@@ -162,7 +168,7 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="p-2 rounded bg-[#131C17] hover:bg-[#C5A880] text-stone-400 hover:text-[#0E1411] transition-colors flex items-center space-x-1"
+            className="p-2 rounded bg-[#211B16] hover:bg-[#C5A880] text-stone-400 hover:text-[#181410] transition-colors flex items-center space-x-1"
             aria-label="Back to top"
           >
             <ArrowUp className="w-3.5 h-3.5" />

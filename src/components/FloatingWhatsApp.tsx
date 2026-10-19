@@ -15,7 +15,7 @@ export default function FloatingWhatsApp() {
       className="fixed bottom-20 md:bottom-6 right-5 md:right-6 z-40 hidden sm:flex items-center group"
     >
       {/* Tooltip Label */}
-      <span className="hidden lg:inline-block mr-2.5 bg-[#0E1411] text-stone-200 text-xs font-medium px-3 py-1.5 rounded-full border border-stone-800 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
+      <span className="hidden lg:inline-block mr-2.5 bg-[#181410] text-stone-200 text-xs font-medium px-3 py-1.5 rounded-full border border-stone-800 shadow-lg opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none whitespace-nowrap">
         Front Desk WhatsApp
       </span>
 

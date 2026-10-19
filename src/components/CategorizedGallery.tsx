@@ -46,19 +46,19 @@ export default function CategorizedGallery() {
   }, [lightboxIndex, closeLightbox, nextImage, prevImage]);
 
   return (
-    <section id="gallery" className="py-24 sm:py-32 bg-[#FAF8F5] text-stone-900 border-t border-stone-200">
+    <section id="gallery" className="py-24 sm:py-32 bg-[#FBF6EC] text-stone-900 border-t border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
             <div>
-              <div className="inline-flex items-center space-x-2 text-[11px] uppercase tracking-[0.2em] font-semibold text-[#8c5d2e] mb-3">
+              <div className="inline-flex items-center space-x-2 text-[11px] uppercase tracking-[0.2em] font-semibold text-[#96754A] mb-3">
                 <Sparkles className="w-3.5 h-3.5 text-[#C5A880]" />
                 <span>Visual Journey</span>
               </div>
               <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-stone-900 leading-tight">
                 Moments at{' '}
-                <span className="font-editorial italic text-[#8c5d2e]">
+                <span className="font-editorial italic text-[#96754A]">
                   Elite Hotel.
                 </span>
               </h2>
@@ -75,7 +75,7 @@ export default function CategorizedGallery() {
                   onClick={() => setActiveCategory(cat)}
                   className={`px-3.5 py-1.5 text-xs tracking-wider uppercase rounded transition-all duration-200 font-medium ${
                     activeCategory === cat
-                      ? 'bg-[#0E1411] text-white shadow-sm'
+                      ? 'bg-[#181410] text-white shadow-sm'
                       : 'bg-white text-stone-600 border border-stone-200 hover:border-stone-400'
                   }`}
                 >
@@ -87,20 +87,22 @@ export default function CategorizedGallery() {
         </ScrollReveal>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-5 [column-fill:_balance]">
           {filteredItems.map((item, index) => (
-            <ScrollReveal key={item.id} delayMs={index * 50}>
+            <ScrollReveal key={item.id} delayMs={(index % 3) * 80} variant="clip" className="break-inside-avoid mb-5">
               <div
                 onClick={() => setLightboxIndex(index)}
-                className="group relative aspect-[4/3] rounded-lg overflow-hidden bg-stone-200 cursor-pointer shadow-sm hover:shadow-lg transition-all duration-300"
+                role="button" tabIndex={0} aria-label={`View photo: ${item.title}`}
+                onKeyDown={(e) => { if (e.key === 'Enter') setLightboxIndex(index); }}
+                className={`group relative overflow-hidden bg-stone-200 cursor-pointer shadow-sm hover:shadow-xl transition-shadow duration-500 ${index % 5 === 0 ? 'aspect-[4/5]' : index % 3 === 0 ? 'aspect-[16/10]' : 'aspect-[4/3]'}`}
               >
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-106"
-                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-[900ms] ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.06]"
+                  loading="lazy" decoding="async"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-250 flex flex-col justify-end p-4 text-white">
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-90 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 text-white">
                   <span className="text-[10px] uppercase tracking-wider text-[#C5A880] font-semibold">
                     {item.category}
                   </span>

@@ -16,6 +16,10 @@ import Footer from '@/components/Footer';
 import QuickEnquiryModal from '@/components/QuickEnquiryModal';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 import MobileStickyBar from '@/components/MobileStickyBar';
+import PropertyIntro from '@/components/PropertyIntro';
+import { ScrollProgressBar, MarqueeStrip, StatsBand, ParallaxDivider, DirectVsOtaStrip } from '@/components/PremiumMotion';
+import { Preloader, FilmGrain, SideDots, PinnedMoments } from '@/components/Cinematic';
+import { StickySubNav, TrustStrip, OffersTabs, ExperiencesCarousel } from '@/components/TajDella';
 
 export default function Home() {
   const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
@@ -49,7 +53,11 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen flex flex-col relative bg-[#FAF8F5]">
+    <main className="min-h-screen flex flex-col relative bg-[#FBF6EC]">
+      <Preloader />
+      <FilmGrain />
+      <ScrollProgressBar />
+      <SideDots />
       {/* 0. Navigation Header */}
       <Navbar onOpenBooking={handleOpenBooking} />
 
@@ -58,18 +66,33 @@ export default function Home() {
 
       {/* 2. Booking / Availability Enquiry Card */}
       <BookingWidget onSearch={handleSearchBooking} />
+      <StickySubNav />
+      <MarqueeStrip />
+      <TrustStrip />
+      {/* Editorial About — revived orphan, verified facts only */}
+      <PropertyIntro onOpenBooking={handleOpenBooking} />
+      <StatsBand />
 
       {/* 3. Featured Rooms & Suites (Concise, Visual, Scannable) */}
       <RoomsSection onSelectRoomBooking={handleSelectRoomBooking} />
 
+      <DirectVsOtaStrip onOpenBooking={handleOpenBooking} />
+
       {/* 4. Why Stay With Us / Key Verified Amenities */}
       <AmenitiesSection />
+      <ParallaxDivider />
 
       {/* 5. Dining & Khandala Experience */}
       <DiningExperiences onOpenBooking={handleOpenBooking} />
 
-      {/* 6. Photo Gallery (Categorized with Lightbox) */}
+      <ExperiencesCarousel />
+      <OffersTabs />
+
+      {/* 6. Real Moments filmstrip + Photo Gallery (Categorized with Lightbox) */}
+      <PinnedMoments />
       <CategorizedGallery />
+
+      <ParallaxDivider image="/images/hotel/real-dukes-nose.jpg" title="Duke’s Nose. Sunset, Twelve Minutes Away." sub="The iconic Nagphani cliff — hike up for 360° sunset panoramas over the Sahyadri valley." />
 
       {/* 7. Guest Reviews + 'Book Directly. Stay Better.' */}
       <ReviewsSection onOpenBooking={handleOpenBooking} />

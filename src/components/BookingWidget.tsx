@@ -74,7 +74,7 @@ export default function BookingWidget({ onSearch, className = '' }: BookingWidge
   return (
     <section id="booking-enquiry" className="relative z-20 -mt-10 sm:-mt-14 max-w-6xl mx-auto px-4 sm:px-6">
       <div
-        className={`w-full bg-[#0E1411] border border-[#C5A880]/25 rounded-lg p-5 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.35)] ${className}`}
+        className={`w-full bg-[#181410] border border-[#C5A880]/25 rounded-lg p-5 sm:p-7 shadow-[0_20px_50px_rgba(0,0,0,0.35)] ${className}`}
       >
         {/* Top Direct Booking Value Proposition Strip */}
         <div className="flex flex-wrap items-center justify-between gap-3 pb-4 mb-5 border-b border-stone-800 text-xs">
@@ -99,7 +99,7 @@ export default function BookingWidget({ onSearch, className = '' }: BookingWidge
               value={checkIn}
               min={formatDate(today)}
               onChange={handleCheckInChange}
-              className="w-full bg-[#16201B] border border-stone-700/70 rounded px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#C5A880] transition-colors"
+              className="w-full bg-[#1B1712] border border-stone-700/70 rounded px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#C5A880] transition-colors"
               required
             />
           </div>
@@ -115,7 +115,7 @@ export default function BookingWidget({ onSearch, className = '' }: BookingWidge
               value={checkOut}
               min={checkIn}
               onChange={handleCheckOutChange}
-              className="w-full bg-[#16201B] border border-stone-700/70 rounded px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#C5A880] transition-colors"
+              className="w-full bg-[#1B1712] border border-stone-700/70 rounded px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#C5A880] transition-colors"
               required
             />
           </div>
@@ -133,7 +133,7 @@ export default function BookingWidget({ onSearch, className = '' }: BookingWidge
                 setAdults(a);
                 setChildren(c);
               }}
-              className="w-full bg-[#16201B] border border-stone-700/70 rounded px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#C5A880] transition-colors"
+              className="w-full bg-[#1B1712] border border-stone-700/70 rounded px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#C5A880] transition-colors"
             >
               <option value="1-0">1 Adult (Solo)</option>
               <option value="2-0">2 Adults (Couple)</option>
@@ -153,7 +153,7 @@ export default function BookingWidget({ onSearch, className = '' }: BookingWidge
             <select
               value={selectedRoomId}
               onChange={(e) => setSelectedRoomId(e.target.value)}
-              className="w-full bg-[#16201B] border border-stone-700/70 rounded px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#C5A880] transition-colors"
+              className="w-full bg-[#1B1712] border border-stone-700/70 rounded px-3 py-2.5 text-xs text-white focus:outline-none focus:border-[#C5A880] transition-colors"
             >
               {ROOMS.map((room) => (
                 <option key={room.id} value={room.id}>
@@ -167,10 +167,10 @@ export default function BookingWidget({ onSearch, className = '' }: BookingWidge
           <div>
             <button
               type="submit"
-              className="w-full bg-[#C5A880] hover:bg-[#d5b992] text-[#0E1411] font-semibold py-2.5 px-4 rounded text-xs tracking-wider uppercase flex items-center justify-center space-x-1.5 shadow transition-all duration-200 h-[40px] group"
+              className="w-full bg-[#C5A880] hover:bg-[#D9C29A] text-[#181410] font-semibold py-2.5 px-4 rounded text-xs tracking-wider uppercase flex items-center justify-center space-x-1.5 shadow transition-all duration-200 h-[40px] group"
             >
               <span>Check Availability</span>
-              <ArrowRight className="w-3.5 h-3.5 text-[#0E1411] group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-3.5 h-3.5 text-[#181410] group-hover:translate-x-1 transition-transform" />
             </button>
           </div>
         </form>

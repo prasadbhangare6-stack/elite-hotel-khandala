@@ -95,7 +95,7 @@ export default function ContactWhatsApp() {
     )}`;
 
   return (
-    <section id="contact" className="py-24 sm:py-32 bg-[#0E1411] text-white relative">
+    <section id="contact" className="py-24 sm:py-32 bg-[#181410] text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>
@@ -106,7 +106,7 @@ export default function ContactWhatsApp() {
             </div>
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal tracking-tight text-white leading-tight">
               Connect With Our{' '}
-              <span className="font-editorial italic text-[#E8DBC5]">
+              <span className="font-editorial italic text-[#EFE3CC]">
                 Front Desk.
               </span>
             </h2>
@@ -120,7 +120,7 @@ export default function ContactWhatsApp() {
           {/* Left Column: Property Contact & WhatsApp Card */}
           <div className="lg:col-span-5 space-y-6">
             <ScrollReveal>
-              <div className="bg-[#131F18] p-6 sm:p-7 rounded-xl border border-emerald-700/40 shadow-lg">
+              <div className="bg-[#211B16] p-6 sm:p-7 rounded-xl border border-emerald-700/40 shadow-lg">
                 <div className="flex items-center space-x-3 mb-3">
                   <div className="w-10 h-10 rounded-full bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center text-emerald-400">
                     <MessageCircle className="w-5 h-5" />
@@ -154,7 +154,7 @@ export default function ContactWhatsApp() {
             </ScrollReveal>
 
             <ScrollReveal delayMs={100}>
-              <div className="bg-[#131C17] p-6 sm:p-7 rounded-xl border border-stone-800 space-y-4">
+              <div className="bg-[#211B16] p-6 sm:p-7 rounded-xl border border-stone-800 space-y-4">
                 <h4 className="font-display text-base font-bold text-white border-b border-stone-800 pb-2">
                   Property Contact Information
                 </h4>
@@ -172,7 +172,7 @@ export default function ContactWhatsApp() {
                     <Phone className="w-4 h-4 text-[#C5A880] shrink-0 mt-0.5" />
                     <div>
                       <strong className="text-white block font-medium">Reception Telephone:</strong>
-                      <a href={`tel:${HOTEL_INFO.phone}`} className="text-[#E8DBC5] hover:underline font-semibold">
+                      <a href={`tel:${HOTEL_INFO.phone}`} className="text-[#EFE3CC] hover:underline font-semibold">
                         {HOTEL_INFO.phoneDisplay}
                       </a>
                     </div>
@@ -203,7 +203,7 @@ export default function ContactWhatsApp() {
           {/* Right Column: Reservation Request Form */}
           <div className="lg:col-span-7">
             <ScrollReveal delayMs={150}>
-              <div className="bg-[#131C17] p-6 sm:p-8 rounded-xl border border-stone-800 shadow-xl">
+              <div className="bg-[#211B16] p-6 sm:p-8 rounded-xl border border-stone-800 shadow-xl">
                 {submitted ? (
                   <div className="text-center py-8 space-y-5 animate-fadeIn">
                     <div className="w-14 h-14 rounded-full bg-emerald-500/20 border border-emerald-400 text-emerald-400 flex items-center justify-center mx-auto">
@@ -224,7 +224,7 @@ export default function ContactWhatsApp() {
                       </p>
                     </div>
 
-                    <div className="bg-[#18241E] p-4 rounded border border-stone-700 max-w-md mx-auto text-left text-xs space-y-1 text-stone-300">
+                    <div className="bg-[#241E18] p-4 rounded border border-stone-700 max-w-md mx-auto text-left text-xs space-y-1 text-stone-300">
                       <div className="flex justify-between">
                         <span className="text-stone-400">Selected Room:</span>
                         <strong className="text-white">{formData.roomType}</strong>
@@ -280,7 +280,7 @@ export default function ContactWhatsApp() {
                           placeholder="Your name"
                           value={formData.fullName}
                           onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                          className="w-full bg-[#18231E] border border-stone-700 rounded px-3 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#C5A880]"
+                          className="w-full bg-[#241E18] border border-stone-700 rounded px-3 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#C5A880]"
                         />
                       </div>
 
@@ -294,7 +294,7 @@ export default function ContactWhatsApp() {
                           placeholder="+91 98765 43210"
                           value={formData.phone}
                           onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                          className="w-full bg-[#18231E] border border-stone-700 rounded px-3 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#C5A880]"
+                          className="w-full bg-[#241E18] border border-stone-700 rounded px-3 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#C5A880]"
                         />
                       </div>
                     </div>
@@ -309,7 +309,7 @@ export default function ContactWhatsApp() {
                           placeholder="name@domain.com"
                           value={formData.email}
                           onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                          className="w-full bg-[#18231E] border border-stone-700 rounded px-3 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#C5A880]"
+                          className="w-full bg-[#241E18] border border-stone-700 rounded px-3 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#C5A880]"
                         />
                       </div>
 
@@ -320,7 +320,7 @@ export default function ContactWhatsApp() {
                         <select
                           value={formData.roomType}
                           onChange={(e) => setFormData({ ...formData, roomType: e.target.value })}
-                          className="w-full bg-[#18231E] border border-stone-700 rounded px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C5A880]"
+                          className="w-full bg-[#241E18] border border-stone-700 rounded px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C5A880]"
                         >
                           {ROOMS.map((r) => (
                             <option key={r.id} value={r.name}>
@@ -341,7 +341,7 @@ export default function ContactWhatsApp() {
                           placeholder="e.g. 15th to 17th November"
                           value={formData.dates}
                           onChange={(e) => setFormData({ ...formData, dates: e.target.value })}
-                          className="w-full bg-[#18231E] border border-stone-700 rounded px-3 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#C5A880]"
+                          className="w-full bg-[#241E18] border border-stone-700 rounded px-3 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#C5A880]"
                         />
                       </div>
 
@@ -352,7 +352,7 @@ export default function ContactWhatsApp() {
                         <select
                           value={formData.guests}
                           onChange={(e) => setFormData({ ...formData, guests: e.target.value })}
-                          className="w-full bg-[#18231E] border border-stone-700 rounded px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C5A880]"
+                          className="w-full bg-[#241E18] border border-stone-700 rounded px-3 py-2 text-xs text-white focus:outline-none focus:border-[#C5A880]"
                         >
                           <option value="1 Guest">1 Guest</option>
                           <option value="2 Guests">2 Guests (Couple)</option>
@@ -371,7 +371,7 @@ export default function ContactWhatsApp() {
                         placeholder="Balcony view request, meal preference, arrival time..."
                         value={formData.message}
                         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                        className="w-full bg-[#18231E] border border-stone-700 rounded px-3 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#C5A880]"
+                        className="w-full bg-[#241E18] border border-stone-700 rounded px-3 py-2 text-xs text-white placeholder-stone-500 focus:outline-none focus:border-[#C5A880]"
                       />
                     </div>
 
@@ -386,16 +386,16 @@ export default function ContactWhatsApp() {
                       <button
                         type="submit"
                         disabled={isSubmitting}
-                        className="w-full sm:w-auto px-7 py-2.5 bg-[#C5A880] hover:bg-[#d5b992] disabled:opacity-75 text-[#0E1411] font-semibold text-xs uppercase tracking-wider rounded transition-colors flex items-center justify-center space-x-2 shadow"
+                        className="w-full sm:w-auto px-7 py-2.5 bg-[#C5A880] hover:bg-[#D9C29A] disabled:opacity-75 text-[#181410] font-semibold text-xs uppercase tracking-wider rounded transition-colors flex items-center justify-center space-x-2 shadow"
                       >
                         {isSubmitting ? (
                           <div className="flex items-center space-x-2">
-                            <div className="w-3.5 h-3.5 border-2 border-[#0E1411] border-t-transparent rounded-full animate-spin" />
+                            <div className="w-3.5 h-3.5 border-2 border-[#181410] border-t-transparent rounded-full animate-spin" />
                             <span>Dispatching Request...</span>
                           </div>
                         ) : (
                           <>
-                            <Send className="w-3.5 h-3.5 text-[#0E1411]" />
+                            <Send className="w-3.5 h-3.5 text-[#181410]" />
                             <span>Send Reservation Inquiry</span>
                           </>
                         )}
